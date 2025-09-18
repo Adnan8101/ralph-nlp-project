@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ralph's Emotion Classifier - AIML Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-brain"></i> Text Emotion Classifier</h1>
+            <p>Advanced AI-powered emotion detection using machine learning</p>
+            <div class="developer-credit">
+                <i class="fas fa-code"></i> Developed by <strong>Ralph AIML</strong> | Roll No: <strong>9</strong>
+            </div>
+        </header>
+
+        <div class="input-section">
+            <div class="input-container">
+                <label for="textInput">Enter your text to analyze:</label>
+                <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+                <div class="model-selector">
+                    <label>Select Model:</label>
+                    <div class="model-options">
+                        <label class="radio-option">
+                            <input type="radio" name="model" value="both" checked>
+                            <span>Both Models</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="model" value="pretrained">
+                            <span>Pre-trained Model</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="model" value="our_trained">
+                            <span>Our Trained Model</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-controls">
+                    <button id="analyzeBtn" class="analyze-btn">
+                        <i class="fas fa-search"></i> Analyze Emotions
+                    </button>
+                    <button id="clearBtn" class="clear-btn">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="model-comparison">
+                <div class="model-result" id="pretrainedResult">
+                    <h3><i class="fas fa-robot"></i> Pre-trained Model</h3>
+                    <div class="model-description">Advanced transformer-based AI model</div>
+                    <div class="emotions-container" id="pretrainedEmotions">
+                        <!-- Emotions will be populated here -->
+                    </div>
+                </div>
+
+                <div class="model-result" id="ourTrainedResult">
+                    <h3><i class="fas fa-cogs"></i> Our Trained Model</h3>
+                    <div class="model-description">Ralph's custom-trained classifier</div>
+                    <div class="emotions-container" id="ourTrainedEmotions">
+                        <!-- Emotions will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section" id="summarySection">
+                <h3><i class="fas fa-chart-bar"></i> Analysis Summary</h3>
+                <div class="dominant-emotion" id="dominantEmotion">
+                    <!-- Dominant emotion will be shown here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Analyzing emotions...</p>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p><i class="fas fa-graduation-cap"></i> <strong>Ralph AIML Project</strong> - Advanced Text Emotion Classification</p>
+                <p><i class="fas fa-user-graduate"></i> Roll Number: 9 | <i class="fas fa-calendar"></i> 2025</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">AI Models</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Machine Learning</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
