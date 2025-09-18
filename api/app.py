@@ -13,6 +13,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# CRITICAL: Proper Flask initialization for Vercel
 app = Flask(__name__, 
            template_folder='../templates',
            static_folder='../static')
@@ -24,10 +25,12 @@ total_response_time = 0
 
 @app.route('/')
 def index():
+    """Main route - MUST exist to avoid 404"""
     return render_template('index.html')
 
 @app.route('/static/<path:filename>')
 def static_files(filename):
+    """Serve static files properly"""
     return send_from_directory('../static', filename)
 
 @app.route('/analyze', methods=['POST'])
@@ -103,6 +106,7 @@ def analyze_emotion():
 
 @app.route('/health')
 def health_check():
+    """Health check endpoint"""
     try:
         return jsonify({
             'status': 'healthy',
@@ -117,5 +121,7 @@ def health_check():
             'error': str(e)
         }), 500
 
-# Export app for Vercel
-app = app
+# CRITICAL: Export app for Vercel
+# This is the key fix - Vercel needs this export
+if __name__ == '__main__':
+    app.run(debug=True)
