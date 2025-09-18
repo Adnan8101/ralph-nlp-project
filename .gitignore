@@ -1,0 +1,106 @@
+# ==========================
+# Python Flask .gitignore
+# ==========================
+
+# --- Python cache/build ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+wheels/
+*.manifest
+*.spec
+
+# --- Flask instance folder ---
+# Flask can store configs, uploads, etc. in "instance/"
+instance/
+# If you want to keep config.py or uploads, remove the line above.
+
+# --- Virtual environments ---
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+pip-wheel-metadata/
+
+# --- Logs / debugging ---
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+.tox/
+noxfile.*
+.mypy_cache/
+.pytest_cache/
+.pyre/
+.dmypy.json
+dmypy.json
+
+# --- Jupyter / Notebooks (if used) ---
+.ipynb_checkpoints
+*.ipynb
+
+# --- Environment / secrets ---
+.env
+*.env
+.env.*
+*.pem
+*.key
+config.json
+secrets.json
+
+# --- SQLite / DB files (if used locally) ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- IDE / Editors ---
+# VSCode
+.vscode/
+# PyCharm
+.idea/
+*.iml
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# --- Mac / Windows OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Frontend builds (if Flask + React/Vue/Angular) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/build
+/.next
+/.nuxt
+/dist
+
+# --- Docker / CI ---
+.dockerignore
+docker-compose.override.yml
+*.pid
+
+# ==========================
+# End of .gitignore
+# ==========================
