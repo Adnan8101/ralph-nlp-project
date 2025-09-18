@@ -21,7 +21,7 @@ wheels/
 # --- Flask instance folder ---
 # Flask can store configs, uploads, etc. in "instance/"
 instance/
-# If you want to keep config.py or uploads, remove the line above.
+# (remove above if you want to keep instance/configs in Git)
 
 # --- Virtual environments ---
 venv/
@@ -33,10 +33,6 @@ pip-wheel-metadata/
 
 # --- Logs / debugging ---
 *.log
-*.pot
-*.pyc
-*.pyo
-*.pyd
 *.coverage
 .coverage.*
 .cache
@@ -53,7 +49,7 @@ noxfile.*
 .dmypy.json
 dmypy.json
 
-# --- Jupyter / Notebooks (if used) ---
+# --- Jupyter / Notebooks ---
 .ipynb_checkpoints
 *.ipynb
 
@@ -66,18 +62,15 @@ dmypy.json
 config.json
 secrets.json
 
-# --- SQLite / DB files (if used locally) ---
+# --- SQLite / DB files ---
 *.db
 *.sqlite
 *.sqlite3
 
 # --- IDE / Editors ---
-# VSCode
 .vscode/
-# PyCharm
 .idea/
 *.iml
-# Sublime
 *.sublime-project
 *.sublime-workspace
 
